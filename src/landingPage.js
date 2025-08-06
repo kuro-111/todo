@@ -12,29 +12,33 @@ const main = document.querySelector('.main');
 
 function landingPage() {
   const landPageDiv = document.createElement('div');
+  landPageDiv.classList.add('page-front');
 
   landPageDiv.innerHTML = `
-      <h1> To Do! </h1>
+     
       <div class="sidebar">
+        <div class="navbar">
         <h3> Menu </h3>
         <ul class="projects">
 
         </ul>
+        </div>
       </div>
       <div class= "centerSpace"> 
-      <form class="toDoForm">
-      <ul>
-        <li>
-          <label for="name">Task</label>
-          <input
+        <div class= "center-container"
+        <form class="toDoForm">
+        <ul>
+          <li>
+            <label for="name">Task</label>
+            <input
             name="name"
             id="name"
             class="toDoName"
             type="text"
             placeholder="task"
-          />
-        </li>
-        <li>
+            />
+          </li>
+          <li>
           <label for="desc">Description</label>
           <input
             name="desc"
@@ -43,8 +47,8 @@ function landingPage() {
             type="text"
             placeholder="feed me"
           />
-        </li>
-        <li>
+          </li>
+          <li>
           <label for="dueDate">Due Date</label>
           <input
             name="dueDate"
@@ -52,9 +56,9 @@ function landingPage() {
             class="dueDate"
             type="date"
             placeholder="dueDate"
-          />
-        </li>
-        <li>
+            />
+          </li>
+          <li>
           <label for="note">Notes</label>
           <input
             name="note"
@@ -67,6 +71,7 @@ function landingPage() {
       </ul>
       <button type="submit">Submit</button>
     </form>
+      </div>
       </div>
     `;
 
