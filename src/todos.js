@@ -16,7 +16,7 @@ export default Todo;
 //can we do forms for the list?
 //on button.click => form
 
-function addToDo(e, form) {
+export function addToDo(e, form) {
   // handle form
   const data = new FormData(form);
   e.preventDefault();
