@@ -1,17 +1,20 @@
-class Project{
-
-constructor(name, todos) {
+class Project {
+  constructor(name) {
     this.name = name;
-    this.todos = todos;
-   }
-   
-    addTodosToProject(project, todos) {
-        project.todos = todos
-    }
-
+  }
 }
 
-export default Project
+export default Project;
+
+export function addProject(e, pForm) {
+  const data = new FormData(pForm);
+  e.preventDefault();
+  const newName = data.get('pName');
+
+  const newProject = new Project(newName);
+
+  console.log(newProject);
+}
 
 // function createProject
 

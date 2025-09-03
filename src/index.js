@@ -6,16 +6,16 @@ import './landingPage.css';
 
 const template = document.querySelector('.main');
 
-const newTodo = new Todo(
-  'New todo',
-  'This is the best todo.',
-  new Date().toISOString(),
-  'Big NOTE'
-);
+// const newTodo = new Todo(
+//   'New todo',
+//   'This is the best todo.',
+//   new Date().toISOString(),
+//   'Big NOTE'
+// );
 
-const newProject = new Project('Laundry', [newTodo]);
+// const newProject = new Project('Laundry', [newTodo]);
 
-console.log(newTodo);
-console.log(newProject);
+// console.log(newTodo);
+// console.log(newProject);
 
 landingPage();
