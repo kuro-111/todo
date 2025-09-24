@@ -104,6 +104,9 @@ body {
     margin-top: 1.5rem;
 }
 
+ul {
+    list-style-type: none;
+}
 
 .toDoForm {
     display: flex;
@@ -116,11 +119,14 @@ body {
     position: fixed; /* Stay in place */
     z-index: 1;
     margin-top: 2rem;
-    margin-left: 25rem;
+    margin-left: 28rem;
     gap: 1.5rem;
     background-color: white;
     justify-content: center;
     align-items: center;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
 }
 
 .toDoForm input[type=text]:focus, .form-container input[type=date]:focus {
