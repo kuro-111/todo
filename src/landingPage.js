@@ -83,14 +83,15 @@ function landingPage() {
             />
             </li>
             </ul>
+            <div class=form-buttons>
             <button type="submit">Submit</button>
-
-            
+            <button class="exit-form">Cancel</button>
+            </div>
             
             `;
 
   main.appendChild(landPageDiv);
-
+  const cancel = document.querySelector('.exit-form');
   const newTodo = document.querySelector('.add-todo');
   const toDoSpace = document.querySelector('.centerSpace');
   const form = document.querySelector('.toDoForm');
@@ -98,16 +99,14 @@ function landingPage() {
 
   newTodo.addEventListener('click', (e) => {
     form.classList.add('show');
-    const cancel = document.createElement('button');
-    cancel.classList.add('.exitform');
-
-    form.addEventListener('submit', (e) => {
-      console.log('hello from the event listener!!');
-
-      addToDo(e, form);
-    });
 
     console.log('I worK!!');
+  });
+
+  form.addEventListener('submit', (e) => {
+    console.log('hello from the event listener!!');
+    form.classList.remove('show');
+    addToDo(e, form);
   });
 
   const pForm = document.querySelector('.projectForm');
@@ -118,5 +117,7 @@ function landingPage() {
 
   return 'landingPage';
 }
+
+//for accessing local storage for DOM  let todoArray = JSON.parse(localStorage.getItem('todoStorage'));
 
 export default landingPage;

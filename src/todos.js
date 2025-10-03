@@ -24,9 +24,19 @@ export function addToDo(e, form) {
   const newDesc = data.get('desc');
   const newDueDate = data.get('dueDate');
   const newNote = data.get('note');
+
+  const newTodo = new Todo(newName, newDesc, newDueDate, newNote);
+
+  let todoArray = JSON.parse(localStorage.getItem('todoStorage'));
+
+  if (!Array.isArray(todoArray)) {
+    todoArray = [];
+  }
+
+  todoArray.push(newTodo);
+
+  localStorage.setItem('todoStorage', JSON.stringify(todoArray));
 }
-
-
 
 // add todo todo = new Todo(name, desc, dueData, note)
 
