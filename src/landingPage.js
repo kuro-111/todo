@@ -1,4 +1,4 @@
-import { addToDo } from './todos.js';
+import { addToDo, listTodo } from './todos.js';
 import { addProject, listProjects } from './projects.js';
 
 // Ex code
@@ -38,6 +38,7 @@ function landingPage() {
           </div>  
           </div>
           <div class= "centerSpace"> 
+        <div class= "card-container"></div>
         <div class= "center-container">
         <button class="add-todo">+ Add a to do</button>
         <form class="toDoForm">
@@ -96,6 +97,7 @@ function landingPage() {
   const toDoSpace = document.querySelector('.centerSpace');
   const form = document.querySelector('.toDoForm');
   const projectList = document.querySelector('.projects');
+  const cardParent = document.querySelector('.card-container');
 
   newTodo.addEventListener('click', (e) => {
     form.classList.add('show');
@@ -109,11 +111,30 @@ function landingPage() {
     addToDo(e, form);
   });
 
+  displayToDo();
+
   const pForm = document.querySelector('.projectForm');
   pForm.addEventListener('submit', (e) => {
     console.log('meh');
     addProject(e, pForm);
   });
+
+  function displayToDo() {
+    const toDisplay = document.createElement('div');
+    toDisplay.classList.add('todo-card');
+    cardParent.appendChild(toDisplay);
+    cardParent.classList.add('show');
+
+    const todoItem = listTodo();
+
+    todoItem.forEach((todo) => {
+      toDisplay.textContent = `${todo.name}`;
+      console.log('Im working');
+      //make cards for each array item;
+    });
+
+    return;
+  }
 
   return 'landingPage';
 }

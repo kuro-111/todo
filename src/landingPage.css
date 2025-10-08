@@ -86,9 +86,9 @@ body {
     
 }
 
-.centerspace {
+.centerSpace {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     grid-column: 2/ span 3;
 }
@@ -104,6 +104,16 @@ body {
     margin-top: 1.5rem;
 }
 
+.card-container {
+    display: flex;
+    visibility: hidden;
+}
+
+.card-container.show {
+    visibility: visible;
+    flex-direction: row;
+    margin: 1.5rem;
+}
 
 .toDoForm {
     display: flex;
@@ -135,6 +145,14 @@ body {
     animation: fadeIn 1s
 }
 
-.exit-form {
-    background-color: #174D64;
+.todo-card {
+    display: flex;
+    width:100%;
+    height: 15%;
+    background-color: #4d7982;
+}
+
+.exit-form:hover {
+    background-color: #881b1b;
+    color: white;
 }

@@ -4,6 +4,7 @@ class Todo {
     this.desc = desc;
     this.dueDate = dueDate;
     this.note = note;
+    this.id = crypto.randomUUID();
   }
 
   static changeName(name) {
@@ -38,6 +39,16 @@ export function addToDo(e, form) {
   localStorage.setItem('todoStorage', JSON.stringify(todoArray));
 }
 
+export function listTodo() {
+  let todoItem = JSON.parse(localStorage.getItem('todoStorage'));
+
+  if (!Array.isArray(todoItem)) {
+    todoItem = [];
+  }
+
+  return todoItem;
+}
+
 // add todo todo = new Todo(name, desc, dueData, note)
 
 //form.addEventListener('submit', addToDo)
@@ -48,3 +59,5 @@ export function addToDo(e, form) {
 //const
 
 //can forms be put on classes?
+
+//event.currentTarget.attributes['data-key'].value

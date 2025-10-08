@@ -27,7 +27,7 @@ export function addProject(e, pForm) {
 }
 
 export function listProjects() {
-  let projectItem = JSON(localStorage.getItem('projectStorage'));
+  let projectItem = JSON.parse(localStorage.getItem('projectStorage'));
 
   if (!Array.isArray(projectItem)) {
     projectItem = [];
@@ -36,10 +36,23 @@ export function listProjects() {
   return projectItem;
 }
 
-// function editProject()
+function getProject() {}
+
+function deleteProject(e) {
+  let delProject = e.currentTarget.attributes['data-key'].value;
+  let index = function () {
+    findIndex();
+  };
+}
+
+//look at mdn findIdex() webpage
+
+//event.currentTarget.attributes['data-key'].value
+
+// function editProject() toSpliced()
 
 // function createProject
 
 // function editProject
 
-// function deleteProject
+// function deleteProject splice()
