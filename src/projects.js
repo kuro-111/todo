@@ -40,9 +40,24 @@ function getProject() {}
 
 function deleteProject(e) {
   let delProject = e.currentTarget.attributes['data-key'].value;
-  let index = function () {
-    findIndex();
-  };
+
+  // Projects
+  //[{}, {}, { id: delProject, ...rest }, {}, {}]
+  const projects = listProjects();
+
+  const indexOfProject = projects.findIndex((project) => {
+    if (project.id === delProject) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const newProjectArray = projects.toSpliced(indexOfProject, 1);
+
+  localStorage.setItem('projectStorage', JSON.stringify(newProjectArray));
+
+  console.log(newProjectArray);
 }
 
 //look at mdn findIdex() webpage

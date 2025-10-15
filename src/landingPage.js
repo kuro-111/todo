@@ -98,7 +98,8 @@ function landingPage() {
   const form = document.querySelector('.toDoForm');
   const projectList = document.querySelector('.projects');
   const cardParent = document.querySelector('.card-container');
-
+  const todoItem = listTodo();
+  let toDisplay;
   newTodo.addEventListener('click', (e) => {
     form.classList.add('show');
 
@@ -120,20 +121,30 @@ function landingPage() {
   });
 
   function displayToDo() {
-    const toDisplay = document.createElement('div');
+    toDisplay = document.createElement('div');
+
     toDisplay.classList.add('todo-card');
+
     cardParent.appendChild(toDisplay);
     cardParent.classList.add('show');
 
-    const todoItem = listTodo();
+    return toDisplay;
+  }
 
-    todoItem.forEach((todo) => {
-      toDisplay.textContent = `${todo.name}`;
-      console.log('Im working');
-      //make cards for each array item;
-    });
+  todoItem.forEach((todo) => {
+    makeTextBox(toDisplay, todoItem);
+    displayToDo();
+    console.log('Im working');
+    //make cards for each array item;
+  });
 
-    return;
+  function makeTextBox(toDisplay, todo) {
+    const toText = document.createElement('p');
+    toText.classList.add('text-display');
+    toDisplay.appendChild(toText);
+    toText.textContent = `To Do:
+  ${todo.name}
+  Due Date:${todo.dueDate}`;
   }
 
   return 'landingPage';
