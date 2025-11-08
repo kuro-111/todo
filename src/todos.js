@@ -49,6 +49,28 @@ export function listTodo() {
   return todoItem;
 }
 
+
+function deleteToDo(e) {
+  let delToDo = e.currentTarget.attributes['data-key'].value;
+
+  const projects = listTodo();
+  
+    const indexOfProject = projects.findIndex((project) => {
+      if (project.id === delToDo) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+  const newTodoArray = projects.toSpliced(indexOfProject, 1);
+
+  localStorage.setItem('todoStorage', JSON.stringify(newTodoArray));
+
+  console.log(newTodoArray);
+
+
+}
 // add todo todo = new Todo(name, desc, dueData, note)
 
 //form.addEventListener('submit', addToDo)
