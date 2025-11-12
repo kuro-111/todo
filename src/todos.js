@@ -51,19 +51,19 @@ export function listTodo() {
 
 
 function deleteToDo(e) {
-  let delToDo = e.currentTarget.attributes['data-key'].value;
+  let delTodo = e.currentTarget.attributes['data-key'].value;
 
-  const projects = listTodo();
+  const todo = listTodo();
   
-    const indexOfProject = projects.findIndex((project) => {
-      if (project.id === delToDo) {
+    const indexOfTodo = todo.findIndex((todo) => {
+      if (todo.id === delTodo) {
         return true;
       } else {
         return false;
       }
     });
 
-  const newTodoArray = projects.toSpliced(indexOfProject, 1);
+  const newTodoArray = todo.toSpliced(indexOfTodo, 1);
 
   localStorage.setItem('todoStorage', JSON.stringify(newTodoArray));
 

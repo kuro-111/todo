@@ -1,5 +1,5 @@
 import { addToDo, listTodo } from './todos.js';
-import { addProject, listProjects } from './projects.js';
+import { addProject, listProjects, changeProject } from './projects.js';
 
 // Ex code
 // const form = document.querySelector('.todoForm')
@@ -145,6 +145,7 @@ function landingPage() {
     toText.textContent = `To Do:
   ${todo.name}
   Due Date:${todo.dueDate}`;
+  return;
   }
 
   return 'landingPage';

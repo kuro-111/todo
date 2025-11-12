@@ -36,8 +36,6 @@ export function listProjects() {
   return projectItem;
 }
 
-function getProject() {}
-
 function deleteProject(e) {
   let delProject = e.currentTarget.attributes['data-key'].value;
 
@@ -58,6 +56,39 @@ function deleteProject(e) {
   localStorage.setItem('projectStorage', JSON.stringify(newProjectArray));
 
   console.log(newProjectArray);
+}
+
+/**
+ * Takes a newly created project, finds the old project in the array, and replaces it
+*/
+function editProjects(e) {
+
+  let editProject = e.currentTarget.attributes['data-key'].value;
+
+  const projects = listProjects();
+
+  const indexOfProject = projects.findIndex((project) => {
+    if (project.id === editProject) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const newProjectArray =projects.toSpliced(indexOfProject, 1, //result of changeProject function
+  )
+}
+
+/**
+ * Takes a form event with new project data on it, sets up the new Project, and calls changeProject to add it to the array
+ * @param {Object} e - Form event. Has the data on it to create a new project
+ * @returns {Array} - Returns the newly edited array of projects
+*/
+export function changeProject(e) {
+
+  
+  
+
 }
 
 //look at mdn findIdex() webpage
